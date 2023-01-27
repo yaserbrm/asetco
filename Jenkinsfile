@@ -27,21 +27,21 @@ pipeline{
         }
       }
     }
-stage('Deploy to K8s')
-  {
-   steps{
-    sshagent(['kuberstage'])
-    {
+// stage('Deploy to K8s')
+//   {
+//    steps{
+//     sshagent(['kuberstage'])
+//     {
 
-script{
-      try{
-       sh 'ssh stage@95.216.63.203 -p 3031 kubectl rollout restart deployment/nginx-god'
-}catch(error)
-       {
-}
-     }
-    }
-   }
-  }
+// script{
+//       try{
+//        sh 'ssh stage@95.216.63.203 -p 3031 kubectl rollout restart deployment/nginx-god'
+// }catch(error)
+//        {
+// }
+//      }
+//     }
+//    }
+//   }
   }
 }
